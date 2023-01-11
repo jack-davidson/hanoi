@@ -16,17 +16,21 @@ void Stack::push(void* inData)
     newnode->data = inData;
 
     // retrieve pointer to rest of the old structure
-    Node *old = head->next;
+    Node *old = head;
 
     /* set head to point to new top node and set the new node to point to
      * the rest of the old nodes. */
-    head->next = newnode;
+    head = newnode;
     newnode->next = old;
 }
 void* Stack::pop()
 {
-	// your code
-    return NULL;
+    void *popped = head->data; // get data from top node
+    /* get pointer to the next top node (this will be our new top node) */
+    Node *newtop = head->next;
+    free(head->next); // deallocate top node
+    head = head->next; // set new top node
+    return popped;
 }
 
 void* Stack::top()

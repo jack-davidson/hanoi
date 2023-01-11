@@ -1,10 +1,9 @@
-
-#include<stdio.h>
-#include<iostream>
-#include<math.h>
+#include <stdio.h>
+#include <iostream>
+#include <math.h>
+#include <assert.h>
 #include "stack.h"
 #include "disc.h"
-#include <assert.h>
 
 using namespace std;
 
