@@ -32,10 +32,6 @@ void toh(int n)
 }
 int main()
 {
-    Stack s = Stack();
-    s.push((void *)"250");
-    assert 
-    return 0;
     int n;
     cout<<"enter the number of disks";
     cin>>n;
