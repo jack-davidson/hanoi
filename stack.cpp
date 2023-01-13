@@ -7,7 +7,6 @@ using namespace std;
 
 Stack::Stack()
 {
-    head = NULL;
 }
 
 void Stack::push(void* inData)
@@ -26,29 +25,30 @@ void Stack::push(void* inData)
 }
 void* Stack::pop()
 {
+    cout << "test" << endl;
     void *popped = head->data; // get data from top node
     /* get pointer to the next top node (this will be our new top node) */
     Node *newtop = head->next;
-    free(head->next); // deallocate top node
-    head = head->next; // set new top node
+    free(head); // deallocate top node
+    head = newtop; // set new top node
     return popped;
 }
 
-/* Return element from top of stack (Doesn't remove it) */
 void* Stack::top()
 {
-    return head->data;
+	// your code
+    return NULL;
 }
 
-/* Check if stack is empty.  */
 bool Stack::empty()
 {
-    return (head==NULL);
+	// your code
+    return false;
 }
 
 void Stack::display()
 {
-	/* cout<<endl; */
+	//cout<<endl;
 	Node *p1;
 	p1 = head;
 	while (p1 != NULL)

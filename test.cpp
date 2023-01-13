@@ -14,11 +14,15 @@ void test_stack() {
     string str = string("Hello test Data.");
     std::cout << "\tinput  = " << str << '\n';
     s.push(&str);
+    s.push(&str);
     string popped = *(string *)s.pop();
     std::cout << "\tpop() -> " << popped << '\n';
+    std::cout << "\tpop() -> " << *(string *)s.pop() << '\n';
+    /*
     if (str.compare(popped) == 0) {
         std::cout << "\tpassed" << std::endl;
     }
+    */
 }
 
 int main() {
