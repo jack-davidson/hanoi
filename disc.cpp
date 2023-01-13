@@ -1,7 +1,12 @@
 #include "disc.h"
 
-// Implement the functions protoyped in disc.h
-// Your code here
+int Disc::getSize() {
+    return 0;
+}
+
+bool Disc::setSize(int) {
+    return false;
+}
 
 std::string Disc::toString() {
     return "";

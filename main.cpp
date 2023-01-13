@@ -19,8 +19,8 @@ void toh(int n)
 
     for (i = n; i >= 1; i--)
     {
-		//d.setSize(i);
 		Disc* d = new Disc(i);
+		d->setSize(i);
 		cout << d->toString();
         t1->push(d);
     }
@@ -32,7 +32,7 @@ void toh(int n)
 int main()
 {
     int n;
-    cout<<"enter the number of disks";
+    cout<<"enter the number of disks ";
     cin>>n;
     toh(n);
     return 0;
