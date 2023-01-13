@@ -7,6 +7,7 @@ using namespace std;
 
 Stack::Stack()
 {
+    head = NULL;
 }
 
 void Stack::push(void* inData)
@@ -33,21 +34,21 @@ void* Stack::pop()
     return popped;
 }
 
+/* Return element from top of stack (Doesn't remove it) */
 void* Stack::top()
 {
-	// your code
-    return NULL;
+    return head->data;
 }
 
+/* Check if stack is empty.  */
 bool Stack::empty()
 {
-	// your code
-    return false;
+    return (head==NULL);
 }
 
 void Stack::display()
 {
-	//cout<<endl;
+	/* cout<<endl; */
 	Node *p1;
 	p1 = head;
 	while (p1 != NULL)
