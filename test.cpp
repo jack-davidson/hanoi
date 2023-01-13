@@ -11,18 +11,10 @@ using namespace std;
 void test_stack() {
     std::cout << "Testing Stack()\n";
     Stack s = Stack();
-    string str = string("Hello test Data.");
-    std::cout << "\tinput  = " << str << '\n';
-    s.push(&str);
-    s.push(&str);
-    string popped = *(string *)s.pop();
-    std::cout << "\tpop() -> " << popped << '\n';
+    s.push((new string("Hello test Data #1.")));
+    s.push((new string("Hello test Data #2.")));
     std::cout << "\tpop() -> " << *(string *)s.pop() << '\n';
-    /*
-    if (str.compare(popped) == 0) {
-        std::cout << "\tpassed" << std::endl;
-    }
-    */
+    std::cout << "\tpop() -> " << *(string *)s.pop() << '\n';
 }
 
 int main() {
