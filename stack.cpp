@@ -7,6 +7,7 @@ using namespace std;
 
 Stack::Stack()
 {
+    head = NULL;
 }
 
 void Stack::push(void* inData)
@@ -36,13 +37,13 @@ void* Stack::pop()
 void* Stack::top()
 {
 	// your code
-    return NULL;
+    return head->data;
 }
 
 bool Stack::empty()
 {
 	// your code
-    return false;
+    return (head == NULL);
 }
 
 void Stack::display()
