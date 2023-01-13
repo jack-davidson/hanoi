@@ -25,7 +25,6 @@ void Stack::push(void* inData)
 }
 void* Stack::pop()
 {
-    cout << "test" << endl;
     void *popped = head->data; // get data from top node
     /* get pointer to the next top node (this will be our new top node) */
     Node *newtop = head->next;
