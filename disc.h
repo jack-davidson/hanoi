@@ -12,12 +12,11 @@ public:
 	Disc() {
         return;
     }
-	Disc(int) {
-        return;
+	Disc(int s) {
+        size = s;
     }
-	~Disc();
 	int getSize();
-	bool setSize(int);
+	void setSize(int);
 	std::string toString();
 };
 

@@ -1,13 +1,13 @@
 #include "disc.h"
 
 int Disc::getSize() {
-    return 0;
+    return size;
 }
 
-bool Disc::setSize(int) {
-    return false;
+void Disc::setSize(int s) {
+    size = s;
 }
 
 std::string Disc::toString() {
-    return "";
+    return "Disc with size " + std::to_string(size);
 }
