@@ -1,5 +1,7 @@
 #include "disc.h"
 
+using namespace std;
+
 int Disc::getSize() {
     return size;
 }
@@ -9,5 +11,11 @@ void Disc::setSize(int s) {
 }
 
 std::string Disc::toString() {
-    return "Disc with size " + std::to_string(size);
+    string output;
+    output += "(";
+    output += " " + to_string(size) + " ";
+    for (int j = 0; j < size; j++) output += " ";
+    output += ")";
+    output += "\n";
+    return output;
 }

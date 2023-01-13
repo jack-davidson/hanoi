@@ -53,7 +53,7 @@ void Stack::display()
 	p1 = head;
 	while (p1 != NULL)
 	{
-		cout<< ((Disc*)(p1->data))->toString()<<"\t";
+		cout<< ((Disc*)(p1->data))->toString();
 		p1 = p1->next;
 	}
 	cout<<endl;
