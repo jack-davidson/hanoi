@@ -7,11 +7,24 @@
 
 using namespace std;
 
-void toh(int n)
+/* Recursive hanoi algorithm.  */
+void toh(int n, Stack *a, Stack *b, Stack *c)
 {
-    int i, x;
-	Disc* a;
-	Disc* b;
+    if (n == 0) {
+        return;
+    }
+    toh(n - 1, a, c, b);
+    Disc *d = new Disc(n);
+    d = (Disc *)a->pop();
+    b->push((Disc *)d);
+    toh(n - 1, c, b, a);
+}
+
+int main()
+{
+    int n;
+    cout<<"enter the number of disks ";
+    cin>>n;
 
     /* Three discs */
 	Stack* t1 = new Stack();
@@ -19,7 +32,7 @@ void toh(int n)
 	Stack* t3 = new Stack();
 	
     // add initial discs to first tower.
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
 		Disc* d = new Disc(n-i);
         t1->push(d);
@@ -28,16 +41,16 @@ void toh(int n)
     cout << "Printing discs" << endl;
 
     t1->display();
+    toh(n, t1, t2, t3);
 
-	// ****  Your Tower of Hanoi solution!
+    cout << "Printing Stack 1" << endl;
+    t1->display();
 
+    cout << "Printing Stack 2" << endl;
+    t2->display();
 
-}
-int main()
-{
-    int n;
-    cout<<"enter the number of disks ";
-    cin>>n;
-    toh(n);
+    cout << "Printing Stack 3" << endl;
+    t3->display();
+
     return 0;
 }
