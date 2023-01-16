@@ -3,6 +3,7 @@
 
 class Stack
 {
+private:
 	struct Node
 	{
 		void* data;
@@ -11,15 +12,14 @@ class Stack
 
 	Node* head;
 
-
-	public:
-		Stack();					// Construct stack
-        ~Stack();
-		void push(void* inData);	// Add element to top of stack
-		void* pop();				// Return element at top of stack and remove from top
-		void* top();				// Return element at top of stack
-		bool empty();
-		void display();
+public:
+    Stack();					// Construct stack
+    ~Stack();
+    void push(void* inData);	// Add element to top of stack
+    void* pop();				// Return element at top of stack and remove from top
+    void* top();				// Return element at top of stack
+    bool empty();
+    void display();
 
 };
 

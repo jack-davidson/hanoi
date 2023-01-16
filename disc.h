@@ -6,12 +6,10 @@
 
 class Disc
 {
+private:
 	int size;
 	
 public:
-	Disc() {
-        return;
-    }
 	Disc(int s) {
         size = s;
     }
