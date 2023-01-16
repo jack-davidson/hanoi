@@ -13,10 +13,15 @@ void toh(int n, Stack *a, Stack *b, Stack *c)
     if (n == 0) {
         return;
     }
+
     toh(n - 1, a, c, b);
+
     Disc *d = new Disc(n);
+
+    /* Move the disc from Stack a to Stack b. */
     d = (Disc *)a->pop();
     b->push((Disc *)d);
+
     toh(n - 1, c, b, a);
 }
 
