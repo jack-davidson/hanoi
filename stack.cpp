@@ -10,6 +10,18 @@ Stack::Stack()
     head = NULL;
 }
 
+Stack::~Stack()
+{
+    Node *n, *next;
+
+    n = head;
+    while(n) {
+        next = n->next;
+        free(n);
+        n = next;
+    }
+}
+
 void Stack::push(void* inData)
 {
     // create new node with data

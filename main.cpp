@@ -57,5 +57,9 @@ int main()
     cout << "Printing Stack 3" << endl;
     t3->display();
 
+    delete t1;
+    delete t2;
+    delete t3;
+
     return 0;
 }
