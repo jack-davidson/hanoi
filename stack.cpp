@@ -4,7 +4,6 @@
 #include "stack.h"
 #include "disc.h"
 using namespace std;
-//
 
 Stack::Stack()
 {
