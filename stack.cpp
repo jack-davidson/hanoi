@@ -40,20 +40,22 @@ void* Stack::pop()
 void* Stack::top()
 {
 	// your code
-    return data[0];
+    return data[head];
 }
 
 bool Stack::empty()
 {
 	// your code
-    return (data[0] == NULL);
+    return (data[head] == NULL);
 }
 
 void Stack::display()
 {
-    for (int i = 0; i < size; i++)
+    for (int i = head; i >= 0; i--)
 	{
-		cout<< ((Disc*)(data[i]))->toString();
+        if (data[i]) {
+            cout<< ((Disc*)(data[i]))->toString();
+        }
 	}
 	cout<<endl;
 }

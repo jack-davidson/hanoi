@@ -46,7 +46,7 @@ int main()
     cout << "Printing discs" << endl;
 
     t1->display();
-    toh(n, t1, t2, t3);
+    toh(n, t1, t2, t3); /* problem. */
 
     cout << "Printing Stack 1" << endl;
     t1->display();
