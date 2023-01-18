@@ -1,16 +1,16 @@
 #ifndef _Stack_H_
 #define _Stack_H_
 
+/* allocate stack in increments of. */
+#define STACK_ALLOC 10
+
+/* array based stack, the head grows down and data[0] is always the (first in) element. */
 class Stack
 {
 private:
-	struct Node
-	{
-		void* data;
-		Node *next;
-	};
-
-	Node* head;
+    int size; /* size of data. */
+    int head; /* index of end of stack data. */
+    void **data;
 
 public:
     Stack();					// Construct stack
