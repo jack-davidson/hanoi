@@ -10,7 +10,7 @@ using namespace std;
 
 void test_stack() {
     std::cout << "Testing Stack()\n";
-    Stack s = Stack();
+    Stack s = Stack(3);
     s.push((new string("Hello test Data #1.")));
     s.push((new string("Hello test Data #2.")));
     std::cout << "\tpop() -> " << *(string *)s.pop() << '\n';
