@@ -33,9 +33,9 @@ int main()
     cin>>n;
 
     /* Three discs */
-	Stack* t1 = new Stack();
-	Stack* t2 = new Stack();
-	Stack* t3 = new Stack();
+	Stack* t1 = new Stack(n);
+	Stack* t2 = new Stack(n);
+	Stack* t3 = new Stack(n);
 	
     // add initial discs to first tower.
     for (int i = 0; i < n; i++)

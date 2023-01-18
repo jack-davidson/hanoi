@@ -13,7 +13,7 @@ private:
     void **data;
 
 public:
-    Stack();					// Construct stack
+    Stack(int);					// Construct stack
     ~Stack();
     void push(void* inData);	// Add element to top of stack
     void* pop();				// Return element at top of stack and remove from top
