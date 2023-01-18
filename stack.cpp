@@ -7,23 +7,32 @@ using namespace std;
 
 Stack::Stack()
 {
-    data = (void **)malloc(STACK_ALLOC);
     size += STACK_ALLOC;
+    data = new void*[size];
     head = 0;
 }
 
 Stack::~Stack()
 {
-    free(data);
+    delete[] data;
 }
 
 void Stack::push(void* inData)
 {
     /* reallocate when the head index
      * is greater than the size of the array. */
-    if (head > size) {
+    if (head >= size) {
         size += STACK_ALLOC;
         data = (void **)realloc(data, size);
+        void **tmp = new void*[size];
+
+        for (int i = 0; i < head; i++) {
+            tmp[i] = data[i];
+        }
+
+        delete[] data;
+
+        data = tmp;
     }
 
     data[head] = inData;
@@ -46,14 +55,14 @@ void* Stack::top()
 bool Stack::empty()
 {
 	// your code
-    return (data[head] == NULL);
+    return (data[0] == NULL);
 }
 
 void Stack::display()
 {
     for (int i = head; i >= 0; i--)
 	{
-        if (data[i]) {
+        if (data[i] != NULL) {
             cout<< ((Disc*)(data[i]))->toString();
         }
 	}
