@@ -9,7 +9,7 @@ class Stack
 {
 private:
     int size; /* size of data. */
-    int head; /* index of end of stack data. */
+    int top; /* index of end of stack data. */
     void **data;
 
 public:
@@ -17,7 +17,6 @@ public:
     ~Stack();
     void push(void* inData);	// Add element to top of stack
     void* pop();				// Return element at top of stack and remove from top
-    void* top();				// Return element at top of stack
     bool empty();
     void display();
 

@@ -19,7 +19,6 @@ void toh(int n, Stack *a, Stack *b, Stack *c)
     Disc *d = new Disc(n);
 
     /* Move the disc from Stack a to Stack b. */
-    return;
     d = (Disc *)a->pop();
     b->push((Disc *)d);
 

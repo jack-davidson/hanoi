@@ -7,31 +7,31 @@ using namespace std;
 
 Stack::Stack(int n)
 {
-    data = new void*[n];
-    head = 0;
+    data = (void **)malloc(n * sizeof(void*));
+    top = 0;
 }
 
 Stack::~Stack()
 {
-    delete[] data;
+    free(data);
 }
 
 void Stack::push(void* inData)
 {
-    data[head] = inData;
-    head++;
+    if (top == size - 1) {
+        // resize
+    }
+    data[++top] = inData;
 }
 void* Stack::pop()
 {
-    void *popped;
-    head--;
-    popped = data[head];
-    return popped;
-}
+    if (top == 0) {
+        return NULL;
+    }
 
-void* Stack::top()
-{
-    return data[head];
+    void *popped;
+    popped = data[top--];
+    return popped;
 }
 
 bool Stack::empty()
@@ -41,9 +41,11 @@ bool Stack::empty()
 
 void Stack::display()
 {
-    for (int i = head; i >= 0; i--)
+    for (int i = top; i >= 0; i--)
 	{
-        cout<< ((Disc*)(data[i]))->toString();
+        if (data[i]) {
+            cout << ((Disc*)(data[i]))->toString();
+        }
 	}
 	cout<<endl;
 }
